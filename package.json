@@ -12,6 +12,7 @@
     "graph:cruise": "depcruise --config .dependency-cruiser.js -T json -f graphs/dependency-graph.json \"apps/**/*.{ts,tsx,js,jsx,mjs,cjs}\" \"tests/**/*.{ts,tsx,js,jsx,mjs,cjs}\" \"scripts/**/*.{mjs,cjs,js}\"",
     "graph:cruise:dots": "depcruise --config .dependency-cruiser.js -T dot -f graphs/dependency-graph.dot \"apps/**/*.{ts,tsx,js,jsx,mjs,cjs}\"",
     "graph:madge": "madge apps --extensions ts,tsx,js,jsx --json > graphs/madge-graph.json || madge . --extensions ts,tsx,js,jsx --json > graphs/madge-graph.json",
+    "omni:bootstrap": "node scripts/bootstrap-omni-cursor.cjs",
     "intel:graphs": "node scripts/regen-graphs.mjs",
     "intel:gitnexus": "gitnexus analyze",
     "validate:architecture": "truecourse analyze --no-stash --no-skills --no-llm",

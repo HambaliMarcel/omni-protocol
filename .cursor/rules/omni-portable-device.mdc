@@ -1,0 +1,16 @@
+---
+description: When the user clones omni-protocol on a new machine or asks to implement the Omni protocol here, bootstrap Cursor user config from the repo (never skip npm install).
+globs: "**/*"
+alwaysApply: false
+---
+
+# Portable Omni on this device
+
+1. Workspace root **must** be the **omni-protocol** repo clone, not an arbitrary drive root.
+2. From that root run **`npm install`** and **`npm run pw:install`**.
+3. Run **`npm run omni:bootstrap`** to sync **`.cursor` overlays into `~/.cursor`** (or Windows user profile `.cursor`) and merge default MCP stubs.
+4. Tell the human to replace **`PASTE_CONTEXT7_API_KEY_HERE`** in **`mcp.json`** (or MCP UI). Never commit real keys into the repo.
+5. On **Windows**, recommend **`npm install -g gitnexus`** so GitNexus MCP stays reliable, then **restart Cursor**.
+6. Optional: **`npm run intel:gitnexus`**, **`npm run openapi:lint`**, **`npm run validate:architecture`** to verify.
+
+Full checklist: **`docs/cursor-global/PORTABLE_SETUP.md`**.

@@ -10,25 +10,16 @@ From repo root:
 npm run intel:gitnexus
 ```
 
-## Cursor MCP (Windows-friendly)
+## Cursor MCP
 
-Merge into `%USERPROFILE%\.cursor\mcp.json` (create file if missing). Example:
+After **`npm run omni:bootstrap`**, your user **`mcp.json`** should already contain a **gitnexus** entry.
 
-```json
-{
-  "mcpServers": {
-    "gitnexus": {
-      "command": "cmd",
-      "args": ["/c", "npx", "-y", "gitnexus@latest", "mcp"]
-    }
-  }
-}
-```
+**Windows (recommended):** install GitNexus globally so **`lbugjs.node`** from LadybugDB installs reliably, then keep MCP pointed at **`%APPDATA%\npm\gitnexus.cmd`** with args **`["mcp"]`**. If that file is missing, bootstrap falls back to **`npx -y gitnexus@latest mcp`**.
 
-If you already have other servers, **merge** the `gitnexus` key only—do not overwrite the whole file.
+**macOS / Linux:** **`npx -y gitnexus@latest mcp`** is usually fine. If you hit native loader errors, try a global install or match Node LTS to what GitNexus tested.
 
-Restart Cursor after editing.
+Merge extra keys (Linear, Docker gateway) without deleting existing servers. Restart Cursor after edits.
 
 ## Docs
 
-See upstream GitNexus installation & editor setup for updates: [GitNexus installation](https://github.com/abhigyanpatwari/GitNexus).
+Upstream editor setup: [GitNexus README](https://github.com/tsingke/gitnexus/blob/main/gitnexus/README.md).

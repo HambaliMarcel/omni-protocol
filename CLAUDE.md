@@ -41,3 +41,8 @@ This project is indexed by GitNexus as **omni-protocol** (109 symbols, 98 relati
 | Index, status, clean, wiki CLI commands | `.claude/skills/gitnexus/gitnexus-cli/SKILL.md` |
 
 <!-- gitnexus:end -->
+
+## Omni portable bootstrap
+
+On a **new device** after clone: read **`docs/cursor-global/PORTABLE_SETUP.md`**, run **`npm install`**, **`npm run pw:install`**, then **`npm run omni:bootstrap`**, fix the Context7 placeholder in **`~/.cursor/mcp.json`**, restart Cursor. On Windows use **`npm install -g gitnexus`** for stable GitNexus MCP.
+

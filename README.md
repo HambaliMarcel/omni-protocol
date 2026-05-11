@@ -1,14 +1,16 @@
-# Omni-Protocol (local OSS) — bootstrap repo
+# Omni-Protocol (local OSS), portable bootstrap repo
 
-Unified **OSS / self-hosted** engineering stack scaffolding for Cursor: structural intelligence (GitNexus + Graphify), specs & ADRs, TrueCourse governance, Playwright smoke tests, OpenAPI contracts, infra docs for PostHog hobby + BookStack, and Cursor rules/workflows.
+Unified **OSS / self-hosted** engineering stack scaffolding for Cursor: structural intelligence (GitNexus + local graphs), specs and ADRs, TrueCourse governance, Playwright smoke tests, OpenAPI contracts, infra docs for PostHog hobby and BookStack, and Cursor rules that travel with the repo.
 
-**Workspace root:** use this folder in Cursor—not `C:\` directly.
+**Workspace root:** open **this cloned folder** in Cursor, not a drive root like `C:\`.
 
-Linear tracking & links: [`docs/linear/BACKLOG.md`](docs/linear/BACKLOG.md).
+**New machine or new checkout:** read **[`docs/cursor-global/PORTABLE_SETUP.md`](docs/cursor-global/PORTABLE_SETUP.md)**, then run **`npm run omni:bootstrap`** after **`npm install`**. That copies repo **`.cursor`** overlays into your user **`.cursor`** folder and merges Omni MCP defaults.
+
+Linear tracking and links: [`docs/linear/BACKLOG.md`](docs/linear/BACKLOG.md).
 
 ## Global Cursor orchestrator (all projects)
 
-User-wide Omni configuration lives under **`%USERPROFILE%\.cursor\`** rules, MCP servers, orchestration hub, and personal skill. See **[`docs/cursor-global/GLOBAL_CURSOR_OMNI.md`](docs/cursor-global/GLOBAL_CURSOR_OMNI.md)**. Restart Cursor after MCP updates; set the Context7 API key for the Context7 MCP server.
+User-wide Omni configuration is created or updated by **`npm run omni:bootstrap`** (from this repo) and lives under **`%USERPROFILE%\.cursor\`** on Windows or **`~/.cursor`** on macOS and Linux. See **[`docs/cursor-global/GLOBAL_CURSOR_OMNI.md`](docs/cursor-global/GLOBAL_CURSOR_OMNI.md)**. Restart Cursor after MCP updates. Set the Context7 API key in **`mcp.json`** or the Cursor MCP UI.
 
 ## Prerequisites
 
