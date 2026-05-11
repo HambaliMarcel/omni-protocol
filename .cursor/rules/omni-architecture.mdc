@@ -1,0 +1,12 @@
+---
+description: Architectural layers, ADR discipline, and OpenSpec alignment
+globs: "**/*"
+alwaysApply: false
+---
+
+# Architecture & intent
+
+- Read `architecture/SYSTEM_OVERVIEW.md` and relevant `adr/ADR-*.md` before cross-cutting refactors.
+- Non-trivial features need a spec under `specs/` (copy from `specs/templates/`).
+- Public HTTP surface must stay consistent with `openapi/openapi.yaml` — update spec with code.
+- Link new decisions to Linear issues (Terravolt Omni project) when tracking delivery.

@@ -1,0 +1,32 @@
+{
+  "name": "omni-protocol-stack",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local OSS Omni-Protocol engineering stack scaffolding (Terravolt).",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "openapi:lint": "redocly lint openapi/openapi.yaml",
+    "graph:cruise": "depcruise --config .dependency-cruiser.js -T json -f graphs/dependency-graph.json \"apps/**/*.{ts,tsx,js,jsx,mjs,cjs}\" \"tests/**/*.{ts,tsx,js,jsx,mjs,cjs}\" \"scripts/**/*.{mjs,cjs,js}\"",
+    "graph:cruise:dots": "depcruise --config .dependency-cruiser.js -T dot -f graphs/dependency-graph.dot \"apps/**/*.{ts,tsx,js,jsx,mjs,cjs}\"",
+    "graph:madge": "madge apps --extensions ts,tsx,js,jsx --json > graphs/madge-graph.json || madge . --extensions ts,tsx,js,jsx --json > graphs/madge-graph.json",
+    "intel:graphs": "node scripts/regen-graphs.mjs",
+    "intel:gitnexus": "gitnexus analyze",
+    "validate:architecture": "truecourse analyze --no-stash",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "apps:docs": "npm --prefix apps/developer-docs run dev",
+    "pw:install": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "@playwright/test": "^1.49.0",
+    "@redocly/cli": "^1.31.0",
+    "dependency-cruiser": "^17.0.0",
+    "gitnexus": "^1.6.4",
+    "madge": "^8.0.0",
+    "truecourse": "^0.5.11"
+  }
+}

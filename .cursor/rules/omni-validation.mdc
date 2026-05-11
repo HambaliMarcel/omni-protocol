@@ -1,0 +1,16 @@
+---
+description: Validation gates — contracts, tests, architecture diff
+globs: "**/*.{ts,tsx,js,jsx,mjs,cjs}"
+alwaysApply: false
+---
+
+# Validation expectations
+
+After substantive implementation:
+
+1. `npm run openapi:lint` when APIs change.
+2. `npm run test:e2e` when UI/HTTP behavior changes (or document skip reason).
+3. `TRUECOURSE_TELEMETRY=0 npx truecourse analyze --diff` before merge if TrueCourse is enabled.
+4. Regenerate structural intel when module graph shifts: `npm run intel:graphs` and/or `npm run intel:gitnexus`.
+
+Do not mark work complete with only “compiles locally”.

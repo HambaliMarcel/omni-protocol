@@ -1,0 +1,12 @@
+---
+description: Documentation and knowledge preservation standards
+globs: "**/*.{md,mdx}"
+alwaysApply: false
+---
+
+# Documentation discipline
+
+- Update `docs/telemetry/event-catalog.md` when adding analytics events.
+- Mirror external framework facts into `external-docs/` with `SOURCE.md` provenance.
+- Keep `context-map/README.md` routing order current if new memory layers appear.
+- BookStack runbooks: link from `docs/bookstack/onboarding-structure.md` when creating new sections.

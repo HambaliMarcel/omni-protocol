@@ -1,0 +1,13 @@
+---
+description: Enforce Omni local OSS substitutes and forbid SaaS doc/telemetry shortcuts in this workspace
+alwaysApply: true
+---
+
+# Local-first Omni policy
+
+1. Do **not** configure or rely on Context7 / Upstash paid doc APIs — use `./external-docs` mirrors backed by citations.
+2. PostHog must target **self-hosted** URLs from `.env`, never Cloud defaults silently.
+3. Prefer GitNexus + dependency graphs for structural questions before guessing imports.
+4. BookStack/FumaDocs/Post hobby stacks run on localhost or infra you control — document ports in README when changing.
+
+If a third-party SaaS appears necessary: stop and add an ADR proposal first.

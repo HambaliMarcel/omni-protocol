@@ -1,0 +1,36 @@
+openapi: 3.1.0
+info:
+  title: Omni-Protocol API (contract stub)
+  version: 0.1.0
+  license:
+    name: MIT
+    identifier: MIT
+  description: |
+    Canonical OpenAPI placeholder for the Omni-Protocol stack.
+    Replace with your service contract; `npm run openapi:lint` must pass in CI.
+servers:
+  - url: http://127.0.0.1:3000
+    description: Local developer portal / app
+
+security:
+  - {}
+
+paths:
+  /api/health:
+    get:
+      summary: Liveness probe
+      operationId: healthGet
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [status]
+                properties:
+                  status:
+                    type: string
+                    example: ok
+        "429":
+          description: Rate limited (placeholder)

@@ -1,0 +1,40 @@
+services:
+  bookstack-db:
+    image: lscr.io/linuxserver/mariadb:11.4
+    container_name: omni-bookstack-db
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Etc/UTC
+      MYSQL_ROOT_PASSWORD: bookstackroot
+      MYSQL_DATABASE: bookstackapp
+      MYSQL_USER: bookstack
+      MYSQL_PASSWORD: bookstack
+    volumes:
+      - bookstack-db:/config
+    restart: unless-stopped
+
+  bookstack:
+    image: lscr.io/linuxserver/bookstack:latest
+    container_name: omni-bookstack
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Etc/UTC
+      APP_URL: ${BOOKSTACK_PUBLIC_URL:-http://localhost:6875}
+      DB_HOST: bookstack-db
+      DB_PORT: 3306
+      DB_USER: bookstack
+      DB_PASS: bookstack
+      DB_DATABASE: bookstackapp
+    volumes:
+      - bookstack-data:/config
+    ports:
+      - "6875:80"
+    depends_on:
+      - bookstack-db
+    restart: unless-stopped
+
+volumes:
+  bookstack-db:
+  bookstack-data:
