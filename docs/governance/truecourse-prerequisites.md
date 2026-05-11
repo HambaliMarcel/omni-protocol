@@ -1,11 +1,35 @@
 # TrueCourse prerequisites (OSS)
 
-TrueCourse’s current published CLI (**v0.5.x**) attempts to invoke the **Claude Code** binary (`claude`) even for workflows that historically supported deterministic-only mode.
+## Claude Code CLI
 
-Until a `claude` binary is installed (or `CLAUDE_CODE_BINARY` points to one), **`npx truecourse analyze` will abort early** on this machine.
+TrueCourse **v0.5.x** requires the **`claude`** binary on PATH (or `CLAUDE_CODE_BINARY` set). Typical install:
 
-Options:
+- Windows: `winget install Anthropic.ClaudeCode` (adds User PATH; reopen terminal or Cursor).
 
-1. Install [Claude Code](https://docs.anthropic.com/en/docs/claude-code) locally if policy allows — then rerun `npm run validate:architecture`.
-2. Defer governance automation and rely on **dependency graphs + openapi lint + playwright** until TrueCourse adjusts or you pin an older CLI that supports no-LLM mode.
-3. Keep **`TRUECOURSE_TELEMETRY=0`** (or `truecourse telemetry disable`) whenever the CLI becomes available — still required for Omni local OSS posture.
+Daily coding stays in **Cursor**; Claude Code is a **dependency** for TrueCourse, not a replacement IDE.
+
+## Unattended (CI / agents)
+
+Telemetry is disabled on this workspace via `npx truecourse telemetry disable` (already run).
+
+For non-interactive analysis without paid LLM policy checks, use the repo script (frozen flags):
+
+```powershell
+npm run validate:architecture
+```
+
+Equivalent manual command: `npx truecourse analyze --no-stash --no-skills --no-llm`
+
+## Optional LLM rules
+
+Governance with Claude-backed rules costs tokens and needs an authenticated Claude Code setup:
+
+```powershell
+npm run validate:architecture:llm
+```
+
+## Stuck lock file
+
+If you see “Another analyze is already running” and no process holds the lock, delete:
+
+`C:\omni-protocol\.truecourse\.analyze.lock`

@@ -35,7 +35,8 @@ Copy `.env.example` → `.env` for local telemetry/doc URLs.
 | `npm run intel:graphs` | dependency-cruiser + madge → `graphs/` |
 | `npm run intel:gitnexus` | GitNexus index (.git Nexus output) |
 | `npm run test:e2e` | Playwright (set `PLAYWRIGHT_BASE_URL`) |
-| `npm run validate:architecture` | TrueCourse full analyze |
+| `npm run validate:architecture` | TrueCourse static analyze (`--no-llm`, agent/CI safe) |
+| `npm run validate:architecture:llm` | TrueCourse with LLM rules (auth + cost) |
 
 TrueCourse telemetry opt-out:
 
@@ -66,3 +67,5 @@ Instructions: [`docs/mcp/gitnexus-cursor.md`](docs/mcp/gitnexus-cursor.md).
 ## Full report
 
 See [`docs/integration/INTEGRATION_REPORT.md`](docs/integration/INTEGRATION_REPORT.md).
+
+Systems auditor rollup (globally authoritative copy under `%USERPROFILE%\.cursor\omni-protocol\audit\`): [`docs/audit/OMNI_PROTOCOL_GLOBAL_AUDIT_2026-05-11.md`](docs/audit/OMNI_PROTOCOL_GLOBAL_AUDIT_2026-05-11.md).

@@ -9,11 +9,8 @@ blob-report/
 *-archive.zip
 .env
 .env.local
-.truecourse/logs/
-.truecourse/analyses/
-.truecourse/diff.json
-.truecourse/history.json
-.truecourse/ui-state.json
-.truecourse/*.lock
+# TrueCourse local analyzer state (opt in later if you commit baselines)
+.truecourse/
+
 # GitNexus caches (adjust if policy commits indexes)
 .gitnexus/cache/
