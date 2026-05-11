@@ -1,0 +1,15 @@
+---
+description: Hybrid knowledge policy — Context7 MCP + mirrored docs + repo sources
+alwaysApply: true
+---
+
+# Knowledge sourcing (reference omni-protocol repo)
+
+**Order:**
+
+1. In-repo specs, ADRs, OpenAPI.
+2. **Context7 MCP** for up-to-date library/framework APIs when configured (API key present).
+3. **`external-docs/`** mirrors when offline, air‑gapped, or Context7 unavailable.
+4. Never invent undocumented HTTP paths—extend `openapi/` first.
+
+If Context7 fails, state that plainly and proceed with mirrored docs + source reading.

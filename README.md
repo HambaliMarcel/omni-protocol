@@ -6,6 +6,10 @@ Unified **OSS / self-hosted** engineering stack scaffolding for Cursor: structur
 
 Linear tracking & links: [`docs/linear/BACKLOG.md`](docs/linear/BACKLOG.md).
 
+## Global Cursor orchestrator (all projects)
+
+User-wide Omni configuration lives under **`%USERPROFILE%\.cursor\`** rules, MCP servers, orchestration hub, and personal skill. See **[`docs/cursor-global/GLOBAL_CURSOR_OMNI.md`](docs/cursor-global/GLOBAL_CURSOR_OMNI.md)**. Restart Cursor after MCP updates; set the Context7 API key for the Context7 MCP server.
+
 ## Prerequisites
 
 - Node **22+** recommended (aligned with toolchain on authoring machine).
